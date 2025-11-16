@@ -12,7 +12,7 @@ const incomeCategories = ["Salário", "OutrosReceita"];
 const currentYear = new Date().getFullYear();
 
 export default function HomePage({ darkMode, t }) {
-    const [incomes, vsetIncomes] = useState([]);
+    const [incomes, setIncomes] = useState([]);
     const [expenses, setExpenses] = useState([]);
     const [selectedMonth, setSelectedMonth] = useState(monthsPT[new Date().getMonth()]);
     const [selectedYear, setSelectedYear] = useState(currentYear);
