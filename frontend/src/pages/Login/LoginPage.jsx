@@ -27,7 +27,6 @@ export default function LoginPage({ onLogin ,darkMode, setDarkMode}) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
-
       const data = await res.json();
 
       if (!res.ok) {

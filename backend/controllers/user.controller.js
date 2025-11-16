@@ -52,7 +52,6 @@ module.exports = {
     loginUser: async (req, res) => {
         try {
             const { email, password } = req.body;
-
             const user = await User.findOne({ email });
             if (!user) return res.status(401).json({ message: "Invalid credentials" });
 
@@ -72,8 +71,8 @@ module.exports = {
     },
 
 
-  // Get all users (protected)
-  getUsers: async (req, res) => {
+    // Get all users (protected)
+    getUsers: async (req, res) => {
         try {
             const users = await User.find().select("-password"); // exclude password
             res.json(users);

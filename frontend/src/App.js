@@ -15,9 +15,11 @@ function App() {
     const userId = localStorage.getItem("userId");
     return token && userId ? { token, id: userId } : null;
   });
-    const [darkMode, setDarkMode] = useState(
+  const [darkMode, setDarkMode] = useState(
     localStorage.getItem("darkMode") === "true"
   );
+  const savedLang = localStorage.getItem("lang");
+  const [lang, setLang] = useState(savedLang?savedLang:"pt");
   function handleLogin(newUser) {
     localStorage.setItem("token", newUser.token);
     localStorage.setItem("userId", newUser.id);
@@ -28,6 +30,7 @@ function App() {
     localStorage.removeItem("userId");
     setUser(null);
   }
+
   useEffect(() => {
     const token = localStorage.getItem("token");
     const userId = localStorage.getItem("userId");
@@ -35,7 +38,8 @@ function App() {
       setUser({ token, id: userId });
     }
   }, []);
-    useEffect(() => {
+
+  useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add("dark");
     } else {
@@ -43,7 +47,11 @@ function App() {
     }
     localStorage.setItem("darkMode", darkMode);
   }, [darkMode]);
-  const [lang, setLang] = useState("pt");
+
+  useEffect(() => {
+    localStorage.setItem("lang", lang);
+  }, [lang]);
+
   const t = translations[lang];
 
   return (

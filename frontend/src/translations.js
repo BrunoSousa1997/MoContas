@@ -58,6 +58,13 @@ export const translations = {
         incomesIn: "Incomes in",
         expensesIn: "Expenses in",
 
+        // OvertTime
+        year: "Year",
+        month: "Month",
+        incomesOverTime: "Installment Income",
+        expensesOverTime: "Installment Expenses",
+        monthsCount: "Nº Installment",
+
         // Lists
         incomes: "Incomes",
         expenses: "Expenses",
@@ -134,6 +141,13 @@ export const translations = {
         expensesByCategory: "Despesas por Categoria",
         incomesIn: "Receitas em",
         expensesIn: "Despesas em",
+
+        // OvertTime
+        year: "Ano",
+        month: "Mês",
+        incomesOverTime: "Recebimentos em Prestações",
+        expensesOverTime: "Pagamentos em Prestações",
+        monthsCount: "Nº Prestações",
 
         // Listas
         incomes: "Receitas",

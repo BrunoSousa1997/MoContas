@@ -15,6 +15,7 @@ module.exports = {
     },
     deleteIncome: async (req, res) => {
         const { id } = req.params;
+        console.log(id)
         const incomes = await Income.findByIdAndDelete(id);
         res.json(incomes);
     },
